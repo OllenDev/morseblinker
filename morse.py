@@ -53,6 +53,7 @@ morsetab = {
 }
 
 def main():
+    print "Main"
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(7, GPIO.OUT)
     code = morse("Hello")
@@ -64,6 +65,7 @@ def main():
 # Convert a string to morse code with \001 between the characters in
 # the string.
 def morse(line):
+    print "morse "
     res = ''
     for c in line:
         try:
@@ -74,14 +76,18 @@ def morse(line):
 
 # Blink a line of morse code.
 def blink(line):
+    print "blink "
     for c in line:
         if c == '.':
+            print "dot "
             GPIO.output(7,True)
             time.sleep(DOT)
         elif c == '-':
+            print "dash "
             GPIO.output(7,True)
             time.sleep(DASH)
         else:                   # space
+            print "space "
             GPIO.output(7,False)
             time.sleep(DOT*4)
         GPIO.output(7,False)
@@ -89,6 +95,7 @@ def blink(line):
 
 # Display the sentinal value
 def showSentinal():
+    print "sentinal "
     GPIO.output(7,True)
     time.sleep(SENTINAL)    
     GPIO.output(7,False)
