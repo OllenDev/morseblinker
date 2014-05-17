@@ -8,7 +8,7 @@
 import time
 import RPi.GPIO as GPIO
 
-DOT = 0.5 #.5 seconds 
+DOT = 0.1 #.5 seconds 
 DASH = 3 * DOT
 SENTINAL = 6 * DOT
 
