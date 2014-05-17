@@ -77,21 +77,21 @@ def blink(line):
     for c in line:
         if c == '.':
             GPIO.output(7,True)
-            time(DOT)
+            time.sleep(DOT)
         elif c == '-':
             GPIO.output(7,True)
-            time(DASH)
+            time.sleep(DASH)
         else:                   # space
             GPIO.output(7,False)
-            time(DOT*4)
+            time.sleep(DOT*4)
         GPIO.output(7,False)
-        time(DOT*3) #space between characters
+        time.sleep(DOT*3) #space between characters
 
 # Display the sentinal value
-def showSentinal()
+def showSentinal():
     GPIO.output(7,True)
-    time(SENTINAL)    
-    GPIO.output(7,True)
+    time.sleep(SENTINAL)    
+    GPIO.output(7,False)
 
 
 if __name__ == '__main__':
